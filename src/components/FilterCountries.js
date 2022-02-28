@@ -1,8 +1,8 @@
 import SelectOption from "./SelectOption";
 
-const FilterCountries = () => {
+const FilterCountries = (props) => {
   return (
-    <select name="regions">
+    <select name="regions" onChange={props.handleRegionChange}>
       <SelectOption optionValue="Filter by Region" defaultChecked={true} />
       <SelectOption optionValue="Africa" defaultChecked={false} />
       <SelectOption optionValue="America" defaultChecked={false} />
