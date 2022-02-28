@@ -67,6 +67,7 @@ const Home = () => {
           getCountryByName(country.name.common);
         }}
         key={country.name.official}
+        state={{ data: country }}
       >
         <CountryCard
           countryName={country.name.official}
