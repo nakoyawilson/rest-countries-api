@@ -5,7 +5,6 @@ const CountryInfo = () => {
   const location = useLocation();
   const { data } = location.state;
 
-  console.log(data);
   return (
     <main className="main details-country">
       <div className="container">
