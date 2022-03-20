@@ -37,12 +37,27 @@ const CountryInfo = () => {
         <h2 className="country-name">{data.name.common}</h2>
         <div className="results-wrapper">
           <div>
-            {/* <p className="result-paragraph">
-              Native Name:{" "}
-              <span className="country-data">{data.name.nativeName}</span>
-            </p> */}
             <p className="result-paragraph">
-              Poluation: <span className="country-data">{data.population}</span>
+              Native{" "}
+              {Object.keys(data.name.nativeName).length === 1
+                ? "Name: "
+                : "Names: "}
+              {Object.entries(data.name.nativeName).map(([key, val], index) => (
+                <span className="country-data" key={key}>
+                  {val.common}
+                  {Object.keys(data.name.nativeName).length - 1 !== index
+                    ? ", "
+                    : ""}
+                </span>
+              ))}
+            </p>
+            <p className="result-paragraph">
+              Poluation:{" "}
+              <span className="country-data">
+                {data.population
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </span>
             </p>
             <p className="result-paragraph">
               Region: <span className="country-data">{data.region}</span>
@@ -58,21 +73,45 @@ const CountryInfo = () => {
             <p className="result-paragraph">
               Top Level Domain: <span className="country-data">{data.tld}</span>
             </p>
-            {/* <p className="result-paragraph">
-        Currencies: <span className="country-data">{data.currencies}</span>
-      </p> */}
-            {/* <p className="result-paragraph">
-        Languages: <span className="country-data">{data.languages}</span>
-      </p> */}
+            <p className="result-paragraph">
+              {Object.keys(data.currencies).length === 1
+                ? "Currency: "
+                : "Currencies: "}
+              {Object.entries(data.currencies).map(([key, val], index) => (
+                <span className="country-data" key={key}>
+                  {val.name}
+                  {Object.keys(data.currencies).length - 1 !== index
+                    ? ", "
+                    : ""}
+                </span>
+              ))}
+            </p>
+            <p className="result-paragraph">
+              {Object.keys(data.languages).length === 1
+                ? "Language: "
+                : "Languages: "}
+              {Object.entries(data.languages).map(([key, val], index) => (
+                <span className="country-data" key={key}>
+                  {val}
+                  {Object.keys(data.languages).length - 1 !== index ? ", " : ""}
+                </span>
+              ))}
+            </p>
           </div>
-          <p className="border-countries">Border Countries:</p>
-          <div className="border-countries-wrapper">
-            {data.borders.map((country, index) => (
-              <span key={index} className="border-country">
-                {country}
-              </span>
-            ))}
-          </div>
+          {data.borders && (
+            <div>
+              <p className="border-countries">
+                Border {data.borders.length === 1 ? "Country: " : "Countries: "}
+              </p>
+              <div className="border-countries-wrapper">
+                {data.borders.map((country, index) => (
+                  <span key={index} className="border-country">
+                    {country}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </main>
