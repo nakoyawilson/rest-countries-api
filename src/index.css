@@ -8,7 +8,9 @@
   --dark-gray: hsl(0, 0%, 52%);
   --very-light-gray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
-  --shadow: rgba(0, 0, 0, 0.0562443);
+  --shadow-header: rgba(0, 0, 0, 0.0562443);
+  --shadow-back-btn: rgba(0, 0, 0, 0.293139);
+  --shadow-border-country: rgba(0, 0, 0, 0.104931);
 }
 
 /* CSS Reset */
@@ -25,11 +27,17 @@
 
 .light-mode {
   --bg-header: var(--white);
+  --bg-main: var(--very-light-gray);
+  --bg-back-btn: var(--white);
+  --bg-border-country: var(--white);
   --text-main: var(--very-dark-blue-2);
 }
 
 .dark-mode {
   --bg-header: var(--dark-blue);
+  --bg-main: var(--very-dark-blue-1);
+  --bg-back-btn: var(--dark-blue);
+  --bg-border-country: var(--dark-blue);
   --text-main: var(--white);
 }
 
@@ -41,12 +49,14 @@ html {
 
 body {
   font-family: var(--font);
+  color: var(--text-main);
 }
 
 button {
   background: none;
   border: none;
   font: inherit;
+  color: var(--text-main);
 }
 
 img,
@@ -56,6 +66,7 @@ svg {
 
 a {
   text-decoration: none;
+  color: var(--text-main);
 }
 
 .grid {
@@ -72,4 +83,8 @@ a {
 .container {
   width: min(100%, 144rem);
   margin-inline: auto;
+}
+
+.main {
+  background: var(--bg-main);
 }
