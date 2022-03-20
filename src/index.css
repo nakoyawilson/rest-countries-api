@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+:root {
+  --font: "Nunito Sans", sans-serif;
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue-1: hsl(207, 26%, 17%);
+  --very-dark-blue-2: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --shadow: rgba(0, 0, 0, 0.0562443);
+}
+
+/* CSS Reset */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Themes */
+
+.light-mode {
+  --bg-header: var(--white);
+  --text-main: var(--very-dark-blue-2);
+}
+
+.dark-mode {
+  --bg-header: var(--dark-blue);
+  --text-main: var(--white);
+}
+
+/* General Styles */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font);
+}
+
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.flag-wrapper {
+  width: 300px;
+  height: 150px;
+}
+
+.container {
+  width: min(100%, 144rem);
+  margin-inline: auto;
+}

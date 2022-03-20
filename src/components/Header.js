@@ -1,16 +1,15 @@
-const Header = (props) => {
+import "./Header.css";
+
+const Header = ({ handleClick, themeIcon }) => {
   return (
-    <header>
-      <h1>Where in the world?</h1>
-      <button onClick={props.handleClick}>
-        <img
-          src={
-            props.darkModeOn ? "assets/dark_mode.svg" : "assets/light_mode.svg"
-          }
-          alt=""
-        />
-        Dark Mode
-      </button>
+    <header className="header">
+      <div className="container">
+        <h1 className="main-heading">Where in the world?</h1>
+        <button onClick={handleClick} className="btn-theme">
+          <img src={themeIcon} alt="" className="theme-icon" />
+          Dark Mode
+        </button>
+      </div>
     </header>
   );
 };

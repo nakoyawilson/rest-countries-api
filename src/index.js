@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Home from "./routes/home";
 import CountryInfo from "./routes/country";
+import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
