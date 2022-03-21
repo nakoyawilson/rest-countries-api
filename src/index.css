@@ -11,6 +11,7 @@
   --shadow-header: rgba(0, 0, 0, 0.0562443);
   --shadow-back-btn: rgba(0, 0, 0, 0.293139);
   --shadow-border-country: rgba(0, 0, 0, 0.104931);
+  --shadow-card: rgba(0, 0, 0, 0.0294384);
 }
 
 /* CSS Reset */
@@ -30,6 +31,7 @@
   --bg-main: var(--very-light-gray);
   --bg-back-btn: var(--white);
   --bg-border-country: var(--white);
+  --bg-card: var(--white);
   --text-main: var(--very-dark-blue-2);
 }
 
@@ -38,6 +40,7 @@
   --bg-main: var(--very-dark-blue-1);
   --bg-back-btn: var(--dark-blue);
   --bg-border-country: var(--dark-blue);
+  --bg-card: var(--dark-blue);
   --text-main: var(--white);
 }
 
@@ -70,9 +73,11 @@ a {
 }
 
 .grid {
+  width: min(100%, 26.4rem);
+  margin: 3.2rem auto 6.5rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 4rem;
 }
 
 .flag-wrapper {
@@ -87,4 +92,12 @@ a {
 
 .main {
   background: var(--bg-main);
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 376px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

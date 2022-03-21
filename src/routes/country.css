@@ -35,7 +35,7 @@
   height: 100%;
 }
 
-.country-name {
+.details-country .country-name {
   margin: 4.4rem 0 1.6rem;
   font-weight: 800;
   font-size: 2.2rem;

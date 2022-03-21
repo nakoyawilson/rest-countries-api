@@ -1,13 +1,28 @@
+import "./CountryCard.css";
+
 const CountryCard = (props) => {
   return (
-    <section>
+    <section className="card">
       <div className="flag-wrapper">
-        <img src={props.flag} alt={`${props.countryName} flag`} />
+        <img
+          src={props.flag}
+          alt={`${props.countryName} flag`}
+          className="flag"
+        />
       </div>
-      <h2>{props.countryName}</h2>
-      <p>Population: {props.population}</p>
-      <p>Region: {props.region}</p>
-      <p>Capital: {props.capital}</p>
+      <div className="text-content">
+        <h2 className="country-name">{props.countryName}</h2>
+        <p className="card-data">
+          Population:{" "}
+          <span className="card-data-results">{props.population}</span>
+        </p>
+        <p className="card-data">
+          Region: <span className="card-data-results">{props.region}</span>
+        </p>
+        <p className="card-data">
+          Capital: <span className="card-data-results">{props.capital}</span>
+        </p>
+      </div>
     </section>
   );
 };

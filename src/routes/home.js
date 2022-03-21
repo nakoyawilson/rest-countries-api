@@ -82,7 +82,7 @@ const Home = () => {
     );
   };
   return (
-    <main>
+    <main className="main">
       <SearchInput
         inputId="search"
         inputLabel="Search for a country..."
