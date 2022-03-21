@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SearchInput from "../components/SearchInput";
 import FilterCountries from "../components/FilterCountries";
 import CountryCard from "../components/CountryCard";
+import "./home.css";
 
 const Home = () => {
   const [countriesToDisplay, setCountriesToDisplay] = useState("");
@@ -82,16 +83,21 @@ const Home = () => {
     );
   };
   return (
-    <main className="main">
-      <SearchInput
-        inputId="search"
-        inputLabel="Search for a country..."
-        buttonValue="Search"
-        handleInputChange={handleInputChange}
-      />
-      <FilterCountries handleRegionChange={handleRegionChange} />
-      <div className="grid">
-        {countriesToDisplay !== "" && countriesToDisplay.map(displayCountries)}
+    <main className="main home">
+      <div className="container">
+        <div className="search-wrapper">
+          <SearchInput
+            inputId="search"
+            inputLabel="Search for a country..."
+            buttonValue="Search"
+            handleInputChange={handleInputChange}
+          />
+          <FilterCountries handleRegionChange={handleRegionChange} />
+        </div>
+        <div className="grid">
+          {countriesToDisplay !== "" &&
+            countriesToDisplay.map(displayCountries)}
+        </div>
       </div>
     </main>
   );

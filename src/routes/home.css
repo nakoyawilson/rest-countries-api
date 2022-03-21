@@ -1,0 +1,25 @@
+.home .container {
+  padding: 2.4rem 1.6rem 6.5rem;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.grid {
+  width: min(100%, 26.4rem);
+  margin: 3.2rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 376px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
