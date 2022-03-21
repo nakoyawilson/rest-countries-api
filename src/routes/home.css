@@ -9,8 +9,9 @@
 }
 
 .grid {
-  width: min(100%, 26.4rem);
-  margin: 3.2rem auto 0;
+  width: 100%;
+  /* width: min(100%, 26.4rem); */
+  margin: 3.2rem 0 0;
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;

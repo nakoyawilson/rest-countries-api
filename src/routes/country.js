@@ -1,9 +1,29 @@
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 import "./country.css";
 
 const CountryInfo = () => {
   const location = useLocation();
   const { data } = location.state;
+  const [borderCountries, setBorderCountries] = useState([]);
+
+  const borderCountryCodes = data.borders.toString();
+
+  const getBorderCountryNames = async () => {
+    try {
+      const response = await axios.get(
+        `https://restcountries.com/v3.1/alpha?codes=${borderCountryCodes}`
+      );
+      setBorderCountries(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getBorderCountryNames();
+  });
 
   return (
     <main className="main details-country">
@@ -103,10 +123,15 @@ const CountryInfo = () => {
                 Border {data.borders.length === 1 ? "Country: " : "Countries: "}
               </p>
               <div className="border-countries-wrapper">
-                {data.borders.map((country, index) => (
-                  <span key={index} className="border-country">
-                    {country}
-                  </span>
+                {borderCountries.map((country, index) => (
+                  <Link
+                    to="/country"
+                    key={country.name.common}
+                    state={{ data: country }}
+                    className="border-country"
+                  >
+                    {country.name.common}
+                  </Link>
                 ))}
               </div>
             </div>
