@@ -8,12 +8,10 @@ const CountryInfo = () => {
   const { data } = location.state;
   const [borderCountries, setBorderCountries] = useState([]);
 
-  const borderCountryCodes = data.borders.toString();
-
   const getBorderCountryNames = async () => {
     try {
       const response = await axios.get(
-        `https://restcountries.com/v3.1/alpha?codes=${borderCountryCodes}`
+        `https://restcountries.com/v3.1/alpha?codes=${data.borders.toString()}`
       );
       setBorderCountries(response.data);
     } catch (err) {
