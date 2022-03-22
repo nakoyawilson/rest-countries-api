@@ -7,12 +7,13 @@ import "./App.css";
 
 function App() {
   const [darkModeOn, setDarkModeOn] = useState(false);
-  const [themeMode, setThemeMode] = useState(
-    window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light-mode"
-      : "dark-mode"
-  );
+  // const [themeMode, setThemeMode] = useState(
+  //   window.matchMedia &&
+  //     window.matchMedia("(prefers-color-scheme: light)").matches
+  //     ? "light-mode"
+  //     : "dark-mode"
+  // );
+  const [themeMode, setThemeMode] = useState("light-mode");
 
   const appBody = document.querySelector("body");
   appBody.classList = themeMode;
@@ -30,7 +31,8 @@ function App() {
   return (
     <>
       <Header
-        themeIcon={darkModeOn ? lightModeIcon : darkModeIcon}
+        // themeIcon={darkModeOn ? lightModeIcon : darkModeIcon}
+        themeIcon={lightModeIcon}
         handleClick={handleModeChange}
       />
       <Outlet />
