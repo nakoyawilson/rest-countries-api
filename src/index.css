@@ -37,7 +37,7 @@
   --bg-card: var(--white);
   --bg-input: var(--white);
   --text-main: var(--very-dark-blue-2);
-  --text-placeholder: var(--medium-gray);
+  --text-placeholder: var(--dark-gray);
   --search-color: var(--dark-gray);
   --arrow-color: var(--black);
 }
