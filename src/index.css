@@ -9,6 +9,7 @@
   --medium-gray: hsl(0, 0%, 77%);
   --very-light-gray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
   --shadow-header: rgba(0, 0, 0, 0.0562443);
   --shadow-back-btn: rgba(0, 0, 0, 0.293139);
   --shadow-border-country: rgba(0, 0, 0, 0.104931);
@@ -37,6 +38,8 @@
   --bg-input: var(--white);
   --text-main: var(--very-dark-blue-2);
   --text-placeholder: var(--medium-gray);
+  --search-color: var(--dark-gray);
+  --arrow-color: var(--black);
 }
 
 .dark-mode {
@@ -48,6 +51,8 @@
   --bg-input: var(--dark-blue);
   --text-main: var(--white);
   --text-placeholder: var(--white);
+  --search-color: var(--white);
+  --arrow-color: var(--white);
 }
 
 /* General Styles */
@@ -80,6 +85,10 @@ a {
 
 input {
   font: inherit;
+}
+
+ul {
+  list-style: none;
 }
 
 .container {

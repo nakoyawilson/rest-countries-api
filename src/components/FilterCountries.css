@@ -1,4 +1,5 @@
-.dropdown {
+.dropdown,
+.filter-option {
   background-color: var(--bg-input);
   border: none;
   font-weight: 400;

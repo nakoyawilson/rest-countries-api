@@ -1,3 +1,21 @@
+.search-form {
+  position: relative;
+}
+
+.search-icon-wrapper {
+  position: absolute;
+  top: 1.6rem;
+  left: 3.2rem;
+}
+
+.search-svg {
+  width: 1.6rem;
+}
+
+.search-icon {
+  fill: var(--search-color);
+}
+
 .text-input {
   display: block;
   width: 100%;
@@ -23,5 +41,13 @@
     padding: 1.8rem 1.8rem 1.8rem 7.4rem;
     font-size: 1.4rem;
     width: 48rem;
+  }
+
+  .search-icon-wrapper {
+    top: 1.9rem;
+  }
+
+  .search-svg {
+    width: 1.8rem;
   }
 }

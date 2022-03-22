@@ -1,6 +1,10 @@
 const SelectOption = (props) => {
   return (
-    <option value={props.optionValue} defaultChecked={props.defaultChecked}>
+    <option
+      value={props.optionValue}
+      defaultChecked={props.defaultChecked}
+      className="filter-option"
+    >
       {props.optionValue}
     </option>
   );

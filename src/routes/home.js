@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SearchInput from "../components/SearchInput";
-import FilterCountries from "../components/FilterCountries";
+// import FilterCountries from "../components/FilterCountries";
+import CustomSelect from "../components/CustomSelect";
 import CountryCard from "../components/CountryCard";
 import "./home.css";
 
@@ -18,16 +19,16 @@ const Home = () => {
     }
   };
 
-  const getCountriesByRegion = async (region) => {
-    try {
-      const response = await axios.get(
-        `https://restcountries.com/v3.1/region/${region}`
-      );
-      setCountriesToDisplay(response.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const getCountriesByRegion = async (region) => {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://restcountries.com/v3.1/region/${region}`
+  //     );
+  //     setCountriesToDisplay(response.data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   const getCountryByName = async (countryName) => {
     if (countryName !== "") {
@@ -49,10 +50,10 @@ const Home = () => {
     getCountryByName(value);
   };
 
-  const handleRegionChange = (e) => {
-    const { value } = e.target;
-    getCountriesByRegion(value);
-  };
+  // const handleRegionChange = (e) => {
+  //   const { value } = e.target;
+  //   getCountriesByRegion(value);
+  // };
 
   useEffect(() => {
     if (countriesToDisplay === "") {
@@ -92,7 +93,8 @@ const Home = () => {
             buttonValue="Search"
             handleInputChange={handleInputChange}
           />
-          <FilterCountries handleRegionChange={handleRegionChange} />
+          {/* <FilterCountries handleRegionChange={handleRegionChange} /> */}
+          <CustomSelect />
         </div>
         <div className="grid">
           {countriesToDisplay !== "" &&
