@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import darkModeIcon from "./assets/dark_mode.svg";
+// import darkModeIcon from "./assets/dark_mode.svg";
 import lightModeIcon from "./assets/light_mode.svg";
 import "./App.css";
 
