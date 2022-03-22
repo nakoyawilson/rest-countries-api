@@ -28,6 +28,7 @@
   margin-inline: auto;
   border-radius: 5.71755px;
   overflow: hidden;
+  box-shadow: 0 0 0.8rem 0.2rem var(--shadow-card);
 }
 
 .details-country .flag {
@@ -79,4 +80,71 @@
   border-radius: 2px;
   text-align: center;
   padding: 0.6rem 0;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+}
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  .details-country .container {
+    padding: 8rem 8.2rem 15rem 8rem;
+  }
+
+  .btn-back {
+    border-radius: 6px;
+    font-size: 1.6rem;
+    gap: 1rem;
+    padding: 1rem 3.9rem 1rem 3.2rem;
+    margin-bottom: 8rem;
+  }
+
+  .country-details-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .details-country .flag-wrapper {
+    width: min(100%, 56rem);
+    height: 40.1rem;
+    margin-inline: 0;
+    border-radius: 10.0057px;
+  }
+
+  .details-country .text-content {
+    width: min(100%, 57.4rem);
+  }
+
+  .details-country .country-name {
+    margin: 0 0 2.3rem;
+    font-size: 3.2rem;
+    line-height: 4.4rem;
+  }
+
+  .results-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6.8rem;
+  }
+
+  .result-paragraph {
+    font-size: 1.6rem;
+  }
+
+  .border-countries-results-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.6rem;
+  }
+
+  .border-countries-wrapper {
+    margin-top: 0;
+  }
+
+  .border-country {
+    padding: 0.5rem 0 0.4rem;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+  }
 }

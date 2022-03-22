@@ -67,11 +67,11 @@ const Home = () => {
         onClick={() => {
           getCountryByName(country.name.common);
         }}
-        key={country.name.official}
+        key={country.name.common}
         state={{ data: country }}
       >
         <CountryCard
-          countryName={country.name.official}
+          countryName={country.name.common}
           flag={country.flags.svg}
           capital={country.capital}
           region={country.region}
@@ -88,7 +88,7 @@ const Home = () => {
         <div className="search-wrapper">
           <SearchInput
             inputId="search"
-            inputLabel="Search for a country..."
+            inputLabel={`Search for a country\u2026`}
             buttonValue="Search"
             handleInputChange={handleInputChange}
           />
