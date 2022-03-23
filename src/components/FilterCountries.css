@@ -1,6 +1,6 @@
 .dropdown-wrapper {
   background-color: var(--bg-input);
-  padding: 1.4rem 2.4rem;
+  padding: 1.4rem 2rem 1.4rem 2.4rem;
   box-shadow: 0px 2px 9px var(--shadow-input);
   border-radius: 5px;
   width: min(100%, 20rem);
@@ -20,7 +20,7 @@
 
 @media screen and (min-width: 900px) {
   .dropdown-wrapper {
-    padding: 1.8rem 2.4rem;
+    padding: 1.8rem 1.9rem 1.8rem 2.4rem;
   }
 
   .dropdown {
