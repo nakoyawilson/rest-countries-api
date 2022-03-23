@@ -1,9 +1,27 @@
+import { useState } from "react";
 import "./CustomSelect.css";
 
-const CustomSelect = () => {
+const CustomSelect = ({ handleRegionChange, getAllCountries }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleOptionClicked = (value) => {
+    setIsOpen(false);
+    setSelectedOption(value);
+    if (value === "") {
+      getAllCountries();
+    } else {
+      handleRegionChange(value);
+    }
+  };
+
   return (
     <div className="dropdown-container">
-      <div className="dropdown-header-wrapper">
+      <button className="dropdown-header-wrapper" onClick={toggleOpen}>
         <span className="dropdown-header">Filter by Region</span>
         <svg
           width="10"
@@ -21,16 +39,63 @@ const CustomSelect = () => {
             className="arrow-icon"
           />
         </svg>
-      </div>
-      <div className="dropdown-list-wrapper">
-        <ul className="dropdown-list">
-          <li className="list-item">Africa</li>
-          <li className="list-item">America</li>
-          <li className="list-item">Asia</li>
-          <li className="list-item">Europe</li>
-          <li className="list-item">Oceania</li>
-        </ul>
-      </div>
+      </button>
+      {isOpen && (
+        <div className="dropdown-list-wrapper">
+          <ul className="dropdown-list">
+            {selectedOption !== "" && (
+              <li
+                className="list-item"
+                onClick={() => {
+                  handleOptionClicked("");
+                }}
+              >
+                All Regions
+              </li>
+            )}
+            <li
+              className="list-item"
+              onClick={() => {
+                handleOptionClicked("Africa");
+              }}
+            >
+              Africa
+            </li>
+            <li
+              className="list-item"
+              onClick={() => {
+                handleOptionClicked("America");
+              }}
+            >
+              America
+            </li>
+            <li
+              className="list-item"
+              onClick={() => {
+                handleOptionClicked("Asia");
+              }}
+            >
+              Asia
+            </li>
+            <li
+              className="list-item"
+              onClick={() => {
+                handleOptionClicked("Europe");
+              }}
+            >
+              Europe
+            </li>
+            <li
+              className="list-item"
+              onClick={() => {
+                handleOptionClicked("Oceania");
+              }}
+            >
+              Oceania
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

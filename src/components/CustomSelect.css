@@ -4,6 +4,7 @@
 }
 
 .dropdown-header-wrapper {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,6 +55,11 @@
 @media screen and (min-width: 900px) {
   .dropdown-header-wrapper {
     padding: 1.8rem 1.95rem 1.8rem 2.4rem;
+  }
+
+  .dropdown-header-wrapper:hover,
+  .list-item:hover {
+    cursor: pointer;
   }
 
   .dropdown-header {

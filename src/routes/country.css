@@ -86,7 +86,8 @@
 }
 
 /* Media Queries */
-@media screen and (min-width: 900px) {
+
+@media screen and (min-width: 600px) {
   .details-country .container {
     padding: 8rem 8.2rem 15rem 8rem;
   }
@@ -101,8 +102,10 @@
 
   .country-details-wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    gap: 5rem;
   }
 
   .details-country .flag-wrapper {
@@ -146,5 +149,13 @@
     padding: 0.5rem 0 0.4rem;
     font-size: 1.4rem;
     line-height: 1.9rem;
+  }
+}
+
+@media screen and (min-width: 1320px) {
+  .country-details-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
   }
 }
