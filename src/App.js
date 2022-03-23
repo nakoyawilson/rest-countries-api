@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import darkModeIcon from "./assets/dark_mode.svg";
 import lightModeIcon from "./assets/light_mode.svg";
-import "./App.css";
 
 function App() {
   const [darkModeOn, setDarkModeOn] = useState(false);
