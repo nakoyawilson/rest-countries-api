@@ -5,7 +5,7 @@ import "./country.css";
 
 const CountryInfo = () => {
   const location = useLocation();
-  const shouldDisplayData = location.state === null ? false : true;
+  const displayData = location.state === null ? false : true;
   const { data } = location.state || {};
   const [borderCountries, setBorderCountries] = useState([]);
 
@@ -21,7 +21,7 @@ const CountryInfo = () => {
   };
 
   useEffect(() => {
-    shouldDisplayData && getBorderCountryNames();
+    displayData && getBorderCountryNames();
   });
 
   return (
@@ -45,7 +45,7 @@ const CountryInfo = () => {
           </svg>
           <span>Back</span>
         </Link>
-        {shouldDisplayData && (
+        {displayData && (
           <div className="country-details-wrapper">
             <div className="flag-wrapper">
               <img
