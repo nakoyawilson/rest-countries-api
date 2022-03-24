@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import darkModeIcon from "./assets/dark_mode.svg";
-import lightModeIcon from "./assets/light_mode.svg";
+import moonFill from "./assets/dark_mode.svg";
+import moonOutline from "./assets/light_mode.svg";
 
 function App() {
-  const [darkModeOn, setDarkModeOn] = useState(false);
   const [themeMode, setThemeMode] = useState(
     window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: light)").matches
@@ -13,15 +12,20 @@ function App() {
       : "dark-mode"
   );
 
+  const [darkModeOn, setDarkModeOn] = useState(
+    themeMode === "dark-mode" ? true : false
+  );
+
   const appBody = document.querySelector("body");
   appBody.classList = themeMode;
 
   const handleModeChange = () => {
     setDarkModeOn(!darkModeOn);
+    console.log(darkModeOn);
     if (darkModeOn) {
-      setThemeMode("dark-mode");
-    } else {
       setThemeMode("light-mode");
+    } else {
+      setThemeMode("dark-mode");
     }
     appBody.classList = themeMode;
   };
@@ -29,7 +33,7 @@ function App() {
   return (
     <>
       <Header
-        themeIcon={darkModeOn ? lightModeIcon : darkModeIcon}
+        themeIcon={darkModeOn ? moonFill : moonOutline}
         handleClick={handleModeChange}
       />
       <Outlet />
