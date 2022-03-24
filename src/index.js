@@ -13,7 +13,10 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="country" element={<CountryInfo />} />
-          <Route path="*" element={<p>There's nothing here!</p>} />
+          <Route
+            path="*"
+            element={<p className="error-msg">There's nothing here!</p>}
+          />
         </Route>
       </Routes>
     </BrowserRouter>

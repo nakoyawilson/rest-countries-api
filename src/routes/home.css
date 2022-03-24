@@ -17,13 +17,6 @@
   gap: 4rem;
 }
 
-.error-msg {
-  margin: 10rem auto 0;
-  text-align: center;
-  font-size: 1.8rem;
-  line-height: 2.6rem;
-}
-
 /* Media Queries */
 
 @media screen and (min-width: 900px) {

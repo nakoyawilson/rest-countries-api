@@ -111,3 +111,10 @@ ul {
   position: absolute;
   width: 1px;
 }
+
+.error-msg {
+  margin: 10rem auto 0;
+  text-align: center;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+}
