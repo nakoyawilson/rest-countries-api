@@ -10,6 +10,7 @@ const FilterCountries = (props) => {
         className="dropdown"
       >
         <SelectOption optionValue="Filter by Region" defaultChecked={true} />
+        <SelectOption optionValue="All Regions" defaultChecked={false} />
         <SelectOption optionValue="Africa" defaultChecked={false} />
         <SelectOption optionValue="America" defaultChecked={false} />
         <SelectOption optionValue="Asia" defaultChecked={false} />

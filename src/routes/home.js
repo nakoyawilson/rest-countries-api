@@ -56,7 +56,11 @@ const Home = () => {
 
   const handleRegionChange = (e) => {
     const { value } = e.target;
-    getCountriesByRegion(value);
+    if (value === "All Regions") {
+      getAllCountries();
+    } else {
+      getCountriesByRegion(value);
+    }
   };
 
   useEffect(() => {
