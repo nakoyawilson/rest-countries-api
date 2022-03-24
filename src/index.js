@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Home from "./routes/home";
 import CountryInfo from "./routes/country";
+import NotFound from "./routes/notFound";
 import "./index.css";
 
 ReactDOM.render(
@@ -13,10 +14,7 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="country" element={<CountryInfo />} />
-          <Route
-            path="*"
-            element={<p className="error-msg">There's nothing here!</p>}
-          />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

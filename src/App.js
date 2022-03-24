@@ -6,28 +6,31 @@ import moonOutline from "./assets/light_mode.svg";
 
 function App() {
   const [themeMode, setThemeMode] = useState(
-    window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: light)").matches
+    localStorage.getItem("nw-rest-countries-api")
+      ? localStorage.getItem("nw-rest-countries-api")
+      : window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: light)").matches
       ? "light-mode"
       : "dark-mode"
   );
+  localStorage.setItem("nw-rest-countries-api", themeMode);
 
   const [darkModeOn, setDarkModeOn] = useState(
     themeMode === "dark-mode" ? true : false
   );
 
   const appBody = document.querySelector("body");
-  appBody.classList = themeMode;
+  appBody.classList = localStorage.getItem("nw-rest-countries-api");
 
   const handleModeChange = () => {
     setDarkModeOn(!darkModeOn);
-    console.log(darkModeOn);
     if (darkModeOn) {
       setThemeMode("light-mode");
     } else {
       setThemeMode("dark-mode");
     }
     appBody.classList = themeMode;
+    localStorage.setItem("nw-rest-countries-api", themeMode);
   };
 
   return (
