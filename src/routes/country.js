@@ -5,12 +5,9 @@ import "./country.css";
 
 const CountryInfo = () => {
   const location = useLocation();
-  console.log(location);
   const shouldDisplayData = location.state === null ? false : true;
   const { data } = location.state || {};
   const [borderCountries, setBorderCountries] = useState([]);
-
-  console.log(shouldDisplayData);
 
   const getBorderCountryNames = async () => {
     try {
