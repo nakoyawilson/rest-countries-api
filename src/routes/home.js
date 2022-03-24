@@ -8,6 +8,7 @@ import "./home.css";
 
 const Home = () => {
   const [countriesToDisplay, setCountriesToDisplay] = useState("");
+  const [errorDisplayed, setErrorDisplayed] = useState(false);
 
   const getAllCountries = async () => {
     try {
@@ -36,7 +37,11 @@ const Home = () => {
           `https://restcountries.com/v3.1/name/${countryName}`
         );
         setCountriesToDisplay(response.data);
+        if (errorDisplayed) {
+          setErrorDisplayed(false);
+        }
       } catch (err) {
+        setErrorDisplayed(true);
         console.log(err);
       }
     } else {
@@ -94,10 +99,14 @@ const Home = () => {
           />
           <FilterCountries handleRegionChange={handleRegionChange} />
         </div>
-        <div className="grid">
-          {countriesToDisplay !== "" &&
-            countriesToDisplay.map(displayCountries)}
-        </div>
+        {errorDisplayed ? (
+          <p className="error-msg">No results found</p>
+        ) : (
+          <div className="grid">
+            {countriesToDisplay !== "" &&
+              countriesToDisplay.map(displayCountries)}
+          </div>
+        )}
       </div>
     </main>
   );
